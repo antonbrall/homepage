@@ -3,22 +3,14 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `homepage`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Anton Brall`,
+    siteUrl: `https://brall.se`
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
-      "name": "images",
-      "path": "./src/images/"
+      "name": "blog",
+      "path": `./blog`
     },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
-    },
-    __key: "pages"
-  }]
+  },"gatsby-plugin-mdx",]
 };
