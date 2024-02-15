@@ -4,6 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Anton Brall`,
+    description: `Personal website for Anton Brall`,
     siteUrl: `https://brall.se`
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-mdx-source-name", "gatsby-plugin-sitemap",
