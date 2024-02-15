@@ -13,7 +13,10 @@ const Seo = ({ title }) => {
   `)
 
   return (
+    <>
+    <html lang="en" />
     <title>{title} | {data.site.siteMetadata.title}</title>
+    </>
   )
 }
 
