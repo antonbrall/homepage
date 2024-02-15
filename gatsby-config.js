@@ -6,7 +6,7 @@ module.exports = {
     title: `Anton Brall`,
     siteUrl: `https://brall.se`
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-mdx-source-name",
+  plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-mdx-source-name", "gatsby-plugin-sitemap",
    {
     resolve: 'gatsby-source-filesystem',
     options: {
@@ -33,5 +33,14 @@ module.exports = {
         },
       ],
     },
-  },]
+  },
+  {
+    resolve: 'gatsby-plugin-robots-txt',
+    options: {
+      host: 'https://brall.se',
+      sitemap: 'https://brall.se/sitemap-index.xml',
+      policy: [{userAgent: '*', allow: '/'}]
+    }
+  }
+]
 };
