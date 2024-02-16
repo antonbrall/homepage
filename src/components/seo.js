@@ -18,6 +18,7 @@ const Seo = ({ title }) => {
     <html lang="en" />
     <title>{title} | {data.site.siteMetadata.title}</title>
     <meta name="description" content={data.site.siteMetadata.description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     </>
   )
 }

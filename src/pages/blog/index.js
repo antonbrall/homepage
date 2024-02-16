@@ -3,31 +3,44 @@ import { Link, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
+import "../mystyles.scss"
 
 const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="My Blog Posts">
+      <div class="columns is-multiline">
       {
-        data.allMdx.nodes.filter(node => node.fields.source === 'blog').map(node => (
-          <article key={node.id}>
-            <h2>
+        data.allMdx.nodes.map(node => (
+          
+            <div class="column is-one-third">
+              <div class="zoom-container">
               <Link to={`/blog/${node.frontmatter.slug}`}>
-                {node.frontmatter.title}
+              <div class="card" key={node.id}>
+                <div class="card-image">
+                  <GatsbyImage image={getImage(node.frontmatter.heroImage)} alt={node.frontmatter.heroImageAlt} />
+                </div>
+                <div class="card-content">
+
+                  <div class="content">
+                    <h2 class="title is-h2">{node.frontmatter.title}</h2>
+                    <p>Posted: {node.frontmatter.date}</p>
+                  </div>
+                </div>
+              </div>
               </Link>
-            </h2>
-            <Link to={`/blog/${node.frontmatter.slug}`}><GatsbyImage image={getImage(node.frontmatter.heroImage)} alt={node.frontmatter.heroImageAlt} /></Link>
-            {console.log(node.frontmatter.heroImage)}
-            <p>Posted: {node.frontmatter.date}</p>
-          </article>
+            </div>
+            </div>
+          
         ))
       }
+      </div>
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC }}) {
+    allMdx(sort: { frontmatter: { date: DESC }}, filter:{fields:{source: {eq: "blog"}}}) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
@@ -35,7 +48,7 @@ export const query = graphql`
           slug
           heroImage {
             childImageSharp {
-              gatsbyImageData(width: 1000)
+              gatsbyImageData(width: 2000)
               }
             }
           heroImageAlt

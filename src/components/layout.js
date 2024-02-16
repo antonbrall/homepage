@@ -1,53 +1,30 @@
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import {
-  container,
-  heading,
-  navLinks,
-  navLinkItem,
-  navLinkText,
-  siteTitle
-} from './layout.module.css'
+import "../pages/mystyles.scss"
 
-const Layout = ({ pageTitle, children }) => {
-    const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Layout = ({ children }) => {
   return (
-    <div className={container}>
-    <header className={siteTitle}>{data.site.siteMetadata.title}</header>
-      <nav>
-        <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link to="/" className={navLinkText}>
+    <div class="container">
+      
+
+        <nav class="navbar" role='navigation' aria-label='main navigation'>
+          <div class="navbar-menu">
+            <a href="/" class="navbar-item">
               Home
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to="/projects" className={navLinkText}>
+            </a>
+            <a href="/projects" class="navbar-item">
               Projects
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to="/blog" className={navLinkText}>
+            </a>
+            <a href="/blog" class="navbar-item">
               Blog
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to="/about" className={navLinkText}>
+            </a>
+            <a href="/about" class="navbar-item">
               About
-            </Link>
-          </li>
-        </ul>
-      </nav>
+            </a>
+          </div>
+
+        </nav>
+
       <main>
-        <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
     </div>
