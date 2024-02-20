@@ -6,10 +6,11 @@ import {
   navLinks,
   navLinkItem,
   navLinkText,
-  siteTitle
+  siteTitle,
+  projectContainer
 } from './layout.module.css'
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ pageTitle, type, children }) => {
     const data = useStaticQuery(graphql`
     query {
       site {
@@ -20,7 +21,7 @@ const Layout = ({ pageTitle, children }) => {
     }
   `)
   return (
-    <div className={container}>
+    <div className={`${container} ${((type == "project") ? projectContainer : '')}`}>
     <header className={siteTitle}>{data.site.siteMetadata.title}</header>
       <nav>
         <ul className={navLinks}>

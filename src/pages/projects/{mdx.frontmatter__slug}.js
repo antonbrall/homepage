@@ -5,7 +5,7 @@ import Seo from '../../components/seo'
 
 const ProjectPost = ({ data, children }) => {
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
+    <Layout pageTitle={data.mdx.frontmatter.title} type="project">
       <p>{data.mdx.frontmatter.date}</p>
       {children}
     </Layout>

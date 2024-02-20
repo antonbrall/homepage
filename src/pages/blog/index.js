@@ -15,15 +15,15 @@ const BlogPage = ({ data }) => {
     <Layout pageTitle="My Blog Posts">
       {
         data.allMdx.nodes.map(node => (
-          <div className={`${zoomContainer} ${postContainer}`}>
+          <div className={`${zoomContainer} ${postContainer}`} key={node.id}>
           <Link to={`/blog/${node.frontmatter.slug}`} className={postContainerLink}>
-          <article key={node.id}>
+          <div>
             <h2 className={postOverviewTitle}>
                 {node.frontmatter.title}
             </h2>
             <GatsbyImage image={getImage(node.frontmatter.heroImage)} alt={node.frontmatter.heroImageAlt} />
             {console.log(node.frontmatter.heroImage)}
-          </article>
+          </div>
           </Link>
           </div>
         ))
