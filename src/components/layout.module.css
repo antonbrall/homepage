@@ -1,9 +1,9 @@
 :root {
-  --main-color: #FF9800;
-  --secondary-color: #B80000;
-  --highlight-color: #820300;
-  --main-bg-color: #5F8670;
-  --secondary-bg-color: #B80000;
+  --main-color: #001524;
+  --secondary-color: #ff7d00;
+  --highlight-color: #ff7d00;
+  --main-bg-color: #ffecd1;
+  --secondary-bg-color: #15616d;
 }
 * {
   font-family: courier;
@@ -40,7 +40,7 @@
 }
 
 .post-overview-title {
-  color: var(--main-color);
+  color: var(--secondary-color);
   text-decoration: none;
 }
 .post-container-link {
