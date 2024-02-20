@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
           data.allMdx.nodes.map(node => (
             <div className={flexContainerInside}>
               <div class={`${zoomContainer} ${postContainer}`} key={node.id}>
-                <Link to={`/blog/${node.frontmatter.slug}`} className={postContainerLink}>
+                <Link to={`/projects/${node.frontmatter.slug}`} className={postContainerLink}>
                   <div key={node.id}>
                     <h2 className={postOverviewTitle}>
                       {node.frontmatter.title}
