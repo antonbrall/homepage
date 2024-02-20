@@ -10,7 +10,7 @@
 }
 .container {
     margin: auto;
-    max-width: 500px;
+    max-width: 1280px;
     font-family: sans-serif;
   }
   .heading {
@@ -53,9 +53,29 @@
 }
 
 .zoom-container:hover {
-  transform: scale(1.04);
+  transform: scale(1.03);
+}
+
+.flex-container {
+  /* Safari */
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  /* Standard syntax */
+  display: flex;
+  flex-wrap: wrap;  
+  flex-shrink: 0;
+  gap: 15px;
+}
+.flex-container div{
+  flex: 1 0 auto;
+
+}
+
+.flex-container-inside{
+  width: 30%;
 }
 
 body {
     background-color: var(--main-bg-color);
+    color: var(--main-color);
   }
