@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
-const BlogPost = ({ data, children }) => {
+const ProjectPost = ({ data, children }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>
@@ -25,4 +25,4 @@ export const query = graphql`
 
 export const Head = ({ data }) => <Seo title={data.mdx.frontmatter.title} />
 
-export default BlogPost
+export default ProjectPost
