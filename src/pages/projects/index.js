@@ -15,9 +15,9 @@ const BlogPage = ({ data }) => {
     <Layout pageTitle="My Projects">
       {
         data.allMdx.nodes.filter(node => node.fields.source === 'projects').map(node => (
-          <div className={zoomContainer}>
+          <div className={`${zoomContainer} ${postContainer}`}>
           <Link to={`/projects/${node.frontmatter.slug}`} className={postContainerLink}>
-          <article key={node.id} className={postContainer}>
+          <article key={node.id}>
             <h2 className={postOverviewTitle}>
                 {node.frontmatter.title}
             </h2>
