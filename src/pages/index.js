@@ -16,7 +16,7 @@ import {
 const IndexPage = ({ data }) => {
   return (
     <Layout pageTitle="Home Page">
-      <p>Hi! I'm a journalist and photographer from Sweden</p>
+      <p>Hi! I'm a journalist and photographer living in Sweden</p>
       <StaticImage
         alt="Image of Anton Brall sitting in a small cavern"
         src="../images/ich.jpg"
