@@ -6,10 +6,10 @@ import Seo from '../components/seo'
 const IndexPage = () => {
   return (
     <Layout pageTitle="Home Page">
-      <p>I'm making this by following the Gatsby Tutorial.</p>
+      <p>Hi! I'm a journalist and photographer from Sweden</p>
       <StaticImage
-        alt="Larissa am kochen"
-        src="../images/foto00001.jpg"
+        alt="Image of Anton Brall sitting in a small cavern"
+        src="../images/ich.jpg"
       />
     </Layout>
   )
