@@ -51,6 +51,9 @@ const Layout = ({ pageTitle, type, children }) => {
         <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
+      <footer style={{textAlign:"center"}}>
+        <p>© Anton Brall {(new Date().getFullYear())}</p>
+      </footer>
     </div>
   )
 }
