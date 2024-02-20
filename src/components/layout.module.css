@@ -78,6 +78,10 @@
   width: 30%;
   min-width: 300px;
 }
+.flex-container-inside2{
+  width: 40%;
+  min-width: 300px;
+}
 
 body {
     background-color: var(--main-bg-color);

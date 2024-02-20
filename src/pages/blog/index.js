@@ -7,14 +7,18 @@ import {
   postContainer,
   postOverviewTitle,
   zoomContainer,
-  postContainerLink
+  postContainerLink,
+  flexContainer,
+  flexContainerInside2
 } from '../../components/layout.module.css'
 
 const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="My Blog Posts">
+      <div className={flexContainer}>
       {
         data.allMdx.nodes.map(node => (
+          <div className={flexContainerInside2}>
           <div className={`${zoomContainer} ${postContainer}`} key={node.id}>
             <Link to={`/blog/${node.frontmatter.slug}`} className={postContainerLink}>
               <div>
@@ -26,8 +30,10 @@ const BlogPage = ({ data }) => {
               </div>
             </Link>
           </div>
+          </div>
         ))
       }
+      </div>
     </Layout>
   )
 }
