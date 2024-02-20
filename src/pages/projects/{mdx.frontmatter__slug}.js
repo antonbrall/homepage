@@ -5,7 +5,7 @@ import Seo from '../../components/seo'
 
 const ProjectPost = ({ data, children }) => {
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title} type="project">
+    <Layout pageTitle={data.mdx.frontmatter.title} type={data.mdx.frontmatter.type}>
       <p>{data.mdx.frontmatter.date}</p>
       {children}
     </Layout>
@@ -18,6 +18,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM D, YYYY")
+        type
       }
     }
   }

@@ -21,7 +21,7 @@ const Layout = ({ pageTitle, type, children }) => {
     }
   `)
   return (
-    <div className={`${container} ${((type == "project") ? projectContainer : '')}`}>
+    <div className={`${container} ${((type == "portrait") ? projectContainer : '')}`}>
     <header className={siteTitle}>{data.site.siteMetadata.title}</header>
       <nav>
         <ul className={navLinks}>
