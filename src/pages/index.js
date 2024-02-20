@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link, graphql } from 'gatsby'
 import Seo from '../components/seo'
-import { 
+import {
   postContainer,
   postOverviewTitle,
   zoomContainer,
@@ -11,7 +11,7 @@ import {
   heading,
   flexContainer,
   flexContainerInside
- } from '../components/layout.module.css'
+} from '../components/layout.module.css'
 
 const IndexPage = ({ data }) => {
   return (
@@ -22,28 +22,27 @@ const IndexPage = ({ data }) => {
         src="../images/ich.jpg"
       />
       <Link to={`/blog`} className={postContainerLink}>
-      <h1 className={heading}>My Projects</h1>
+        <h1 className={heading}>My Projects</h1>
       </Link>
       <div className={flexContainer}>
-      {
-        data.allMdx.nodes.map(node => (
-          
+        {
+          data.allMdx.nodes.map(node => (
             <div className={flexContainerInside}>
               <div class={`${zoomContainer} ${postContainer}`} key={node.id}>
-              <Link to={`/blog/${node.frontmatter.slug}`} className={postContainerLink}>
-          <article key={node.id}>
-            <h2 className={postOverviewTitle}>
-                {node.frontmatter.title}
-            </h2>
-            <GatsbyImage image={getImage(node.frontmatter.heroImage)} alt={node.frontmatter.heroImageAlt} />
-            {console.log(node.frontmatter.heroImage)}
-          </article>
-          </Link>
+                <Link to={`/blog/${node.frontmatter.slug}`} className={postContainerLink}>
+                  <div key={node.id}>
+                    <h2 className={postOverviewTitle}>
+                      {node.frontmatter.title}
+                    </h2>
+                    <GatsbyImage image={getImage(node.frontmatter.heroImage)} alt={node.frontmatter.heroImageAlt} />
+                    {console.log(node.frontmatter.heroImage)}
+                  </div>
+                </Link>
+              </div>
             </div>
-            </div>
-          
-        ))
-      }
+
+          ))
+        }
       </div>
     </Layout>
   )
