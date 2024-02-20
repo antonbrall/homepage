@@ -76,6 +76,7 @@
 
 .flex-container-inside{
   width: 30%;
+  min-width: 300px;
 }
 
 body {
