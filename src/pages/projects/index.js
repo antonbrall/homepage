@@ -14,14 +14,14 @@ const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="My Projects">
       {
-        data.allMdx.nodes.filter(node => node.fields.source === 'projects').map(node => (
+        data.allMdx.nodes.map(node => (
           <div className={`${zoomContainer} ${postContainer}`}>
           <Link to={`/projects/${node.frontmatter.slug}`} className={postContainerLink}>
           <article key={node.id}>
             <h2 className={postOverviewTitle}>
                 {node.frontmatter.title}
             </h2>
-            <Link to={`/projects/${node.frontmatter.slug}`}><GatsbyImage image={getImage(node.frontmatter.heroImage)} alt={node.frontmatter.heroImageAlt} /></Link>
+            <GatsbyImage image={getImage(node.frontmatter.heroImage)} alt={node.frontmatter.heroImageAlt} />
             {console.log(node.frontmatter.heroImage)}
           </article>
           </Link>
@@ -34,7 +34,7 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC }}) {
+    allMdx(sort: { frontmatter: { date: DESC }}, filter:{fields:{source: {eq: "projects"}}}) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
@@ -42,7 +42,7 @@ export const query = graphql`
           slug
           heroImage {
             childImageSharp {
-              gatsbyImageData(width: 1000)
+              gatsbyImageData(width: 2000)
               }
             }
           heroImageAlt
