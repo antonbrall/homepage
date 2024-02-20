@@ -45,6 +45,7 @@
 .post-overview-title {
   color: var(--secondary-color);
   text-decoration: none;
+  margin-left: 10px;
 }
 .post-container-link {
   text-decoration: none;
