@@ -21,12 +21,12 @@ const IndexPage = ({ data }) => {
         alt="Image of Anton Brall sitting in a small cavern"
         src="../images/ich.jpg"
       />
-      <Link to={`/blog`} className={postContainerLink}>
+      <Link to={`/projects`} className={postContainerLink}>
         <h1 className={heading}>My Projects</h1>
       </Link>
       <div className={flexContainer}>
         {
-          data.allMdx.nodes.map(node => (
+          data.allMdx.nodes.filter(node => node.fields.source === 'projects').slice(0,3).map(node => (
             <div className={flexContainerInside}>
               <div class={`${zoomContainer} ${postContainer}`} key={node.id}>
                 <Link to={`/projects/${node.frontmatter.slug}`} className={postContainerLink}>
@@ -50,7 +50,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC }}, filter:{fields:{source: {eq: "projects"}}}, limit: 3) {
+    allMdx(sort: { frontmatter: { date: DESC }}) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
