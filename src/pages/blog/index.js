@@ -14,7 +14,7 @@ import {
 
 const BlogPage = ({ data }) => {
   return (
-    <Layout pageTitle="My Blog Posts">
+    <Layout pageTitle="Stuff I have written">
       <div className={flexContainer}>
       {
         data.allMdx.nodes.map(node => (
