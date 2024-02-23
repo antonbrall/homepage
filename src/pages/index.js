@@ -44,6 +44,29 @@ const IndexPage = ({ data }) => {
           ))
         }
       </div>
+      <Link to={`/blog`} className={postContainerLink}>
+        <h1 className={heading}>Stuff I have written</h1>
+      </Link>
+      <div className={flexContainer}>
+        {
+          data.allMdx.nodes.filter(node => node.fields.source === 'blog').filter(node => node.frontmatter.published === true).slice(0,3).map(node => (
+            <div className={flexContainerInside}>
+              <div class={`${zoomContainer} ${postContainer}`} key={node.id}>
+                <Link to={`/blog/${node.frontmatter.slug}`} className={postContainerLink}>
+                  <div key={node.id}>
+                    <h2 className={postOverviewTitle}>
+                      {node.frontmatter.title}
+                    </h2>
+                    <GatsbyImage image={getImage(node.frontmatter.heroImage)} alt={node.frontmatter.heroImageAlt} />
+                    {console.log(node.frontmatter.heroImage)}
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+          ))
+        }
+      </div>
     </Layout>
   )
 }
@@ -56,6 +79,7 @@ export const query = graphql`
           date(formatString: "MMMM D, YYYY")
           title
           slug
+          published
           heroImage {
             childImageSharp {
               gatsbyImageData(width: 2000)
