@@ -50,6 +50,10 @@
 .post-container-link {
   text-decoration: none;
 }
+.post-container-link:visited {
+  text-decoration: none;
+  color: var(--main-color);
+}
 
 .zoom-container {
   transition: transform 0.2s ease-in-out;

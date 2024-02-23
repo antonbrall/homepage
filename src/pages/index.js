@@ -44,6 +44,11 @@ const IndexPage = ({ data }) => {
           ))
         }
       </div>
+      <Link to={`/projects`} className={postContainerLink}>
+        <div style={{textAlign:"right", paddingTop:"10px", textDecoration:"underline"}}>
+          more of my projects
+        </div>
+      </Link>
       <Link to={`/blog`} className={postContainerLink}>
         <h1 className={heading}>Stuff I have written</h1>
       </Link>
@@ -67,6 +72,12 @@ const IndexPage = ({ data }) => {
           ))
         }
       </div>
+
+      <Link to={`/blog`} className={postContainerLink}>
+        <div style={{textAlign:"right", paddingTop:"10px", textDecoration:"underline"}}>
+          more stuff I have written
+        </div>
+      </Link>
     </Layout>
   )
 }
