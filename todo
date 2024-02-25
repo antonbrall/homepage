@@ -2,3 +2,5 @@
  -[] add rss feed
  -[] find a better way to limit the image size
     https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#mdxprovider -> this has to work somehow
+    https://www.gatsbyjs.com/plugins/gatsby-remark-images-insert-wrapper-attributes/ ?
+    
