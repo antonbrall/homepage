@@ -1,6 +1,15 @@
- -[] filter blog posts not only by published but also by date to be able to schedule them
- -[] add rss feed
- -[] find a better way to limit the image size
+ - filter blog posts not only by published but also by date to be able to schedule them
+ - add rss feed
+ - find a better way to limit the image size
     https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#mdxprovider -> this has to work somehow
     https://www.gatsbyjs.com/plugins/gatsby-remark-images-insert-wrapper-attributes/ ?
-    
+    https://www.gatsbyjs.com/plugins/gatsby-remark-classes/?=gatsby-remark
+    https://www.gatsbyjs.com/plugins/gatsby-remark-unwrap-images
+
+# Ideen
+- https://www.gatsbyjs.com/plugins/gatsby-remark-table-of-contents
+- https://www.gatsbyjs.com/plugins/gatsby-remark-emojis/
+- https://www.gatsbyjs.com/plugins/gatsby-remark-embed-video/
+- https://www.gatsbyjs.com/plugins/gatsby-remark-gifs/
+- https://www.gatsbyjs.com/plugins/gatsby-remark-numbered-footnotes/
+- https://www.gatsbyjs.com/plugins/gatsby-remark-abbr/
