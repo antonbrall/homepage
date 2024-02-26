@@ -55,6 +55,55 @@ module.exports = {
       sitemap: 'https://brall.se/sitemap-index.xml',
       policy: [{userAgent: '*', allow: '/'}]
     }
-  }
+  },
+  {
+    resolve: `gatsby-plugin-feed`,
+    options: {
+      query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+      `,
+      feeds: [
+        {
+          serialize: ({ query: { site, allMdx } }) => {
+            return allMdx.edges.map(edge => {
+              return Object.assign({}, edge.node.frontmatter, {
+                description: edge.node.frontmatter.description,
+                date: edge.node.frontmatter.date,
+                url: site.siteMetadata.siteUrl + '/' + edge.node.frontmatter.slug,
+                guid: site.siteMetadata.siteUrl + '/' + edge.node.frontmatter.slug,
+              })
+            })
+          },
+          query: `
+            {
+              allMdx(sort: { frontmatter: { date: DESC }}, filter:{fields:{source: {eq: "blog"}}, frontmatter: {published: {eq: true}}}) {
+                edges {
+                  node {
+                    frontmatter {
+                      title
+                      date
+                      description
+                      slug
+                    }
+                  }
+                }
+              }
+            }
+          `,
+          output: "/rss.xml",
+          title: "Anton Brall's RSS Feed",
+        },
+      ],
+    },
+  },
 ]
 };
