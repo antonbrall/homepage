@@ -6,10 +6,10 @@ const AdressPage = () => {
   return (
     <Layout pageTitle="Meine aktuelle Adresse">
       <p>Anton Brall</p>
-      <p>Stallvägen 21</p>
-      <p>35252 Växjö</p>
+      <p>Stipendiegränd 10C</p>
+      <p>90735 Umeå</p>
       <p>Sweden</p>
-      <p><i>vermutlich so bis Juni 24</i></p>
+      <p><i>ab 1.8.24</i></p>
     </Layout>
   )
 }
