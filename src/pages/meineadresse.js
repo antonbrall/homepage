@@ -6,7 +6,7 @@ const AdressPage = () => {
   return (
     <Layout pageTitle="Meine aktuelle Adresse">
       <p>Anton Brall</p>
-      <p>Stipendiegränd 10C</p>
+      <p>Stipendiegränd 10C lgh 1302</p>
       <p>90735 Umeå</p>
       <p>Sweden</p>
       <p><i>ab 1.8.24</i></p>
