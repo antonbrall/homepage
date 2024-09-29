@@ -13,13 +13,16 @@ import {
 const UpdatePage = ({ data }) => {
   return (
     <Layout pageTitle="Meine halbprivaten Updates">
+      <div>
+        Hier poste ich in unregelmäßigen Abständen Updates aus meinem Leben. Manchmal füge ich auch später noch Fotos hinzu (analogbilder oder Leute die zu faul sind die direkt zu teilen) oder auch manchmal ein Video.
+      </div>
       {
         data.allMdx.nodes.map(node => (
           <div className={`${zoomContainer} ${postContainer}`}>
           <Link to={`/halbprivateupdates/${node.frontmatter.slug}`} className={postContainerLink}>
           <article key={node.id}>
             <h2 className={postOverviewTitle}>
-                {node.frontmatter.title}
+                {node.frontmatter.title}, {node.frontmatter.date}
             </h2>
             <GatsbyImage image={getImage(node.frontmatter.heroImage)} alt={node.frontmatter.heroImageAlt} />
             {console.log(node.frontmatter.heroImage)}
