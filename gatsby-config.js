@@ -23,6 +23,13 @@ module.exports = {
     },
   },
   {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": "halbprivateupdates",
+      "path": `./halbprivateupdates`
+    },
+  },
+  {
     resolve: "gatsby-plugin-mdx",
     options: {
       gatsbyRemarkPlugins: [
