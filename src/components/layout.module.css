@@ -92,3 +92,8 @@ body {
     background-color: var(--main-bg-color);
     color: var(--main-color);
   }
+
+  img {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
