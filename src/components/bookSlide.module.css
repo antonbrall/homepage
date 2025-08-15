@@ -1,12 +1,12 @@
 :root {
-  --main-color: #001524;
-  --secondary-color: #ff7d00;
-  --highlight-color: #ff7d00;
-  --main-bg-color: #ffecd1;
-  --secondary-bg-color: #15616d;
+    --main-color: #001524;
+    --secondary-color: #ff7d00;
+    --highlight-color: #ff7d00;
+    --main-bg-color: #ffecd1;
+    --secondary-bg-color: #15616d;
 }
 * {
-  font-family: courier;
+    font-family: courier;
 }
 .container {
     margin: auto;
@@ -15,12 +15,19 @@
     max-width: 1280px;
     font-family: sans-serif;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  }
-.floatLeft {
-    float: left;
-    width: 30%;
-  }
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+.image_wrapper {
+    flex: 0 0 300px;
+    width: 300px;
+}
+.text_wrapper {
+    flex: 1;
+}
 .heading {
     font-size: 2rem;
     color: var(--main-color);
-  }
+    margin-top: 0;
+}
