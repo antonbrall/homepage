@@ -12,6 +12,7 @@ const BookSlide = ({
   bookAuthor,
   bookCover,
   bookLink,
+  isbn,
   children,
 }) => {
   return (
@@ -21,8 +22,9 @@ const BookSlide = ({
       </div>
       <div className={text_container}>
         <h1 className={heading}>{bookTitle}</h1>
-        <p>Author: {bookAuthor}</p>
-        <a href={bookLink}>Read more</a>
+        {bookAuthor && <p>Autor: {bookAuthor}</p>}
+        {isbn && <p>ISBN: {isbn}</p>}
+        <a href={bookLink}>Mehr erfahren oder Buch kaufen</a>
         {children}
       </div>
     </div>
