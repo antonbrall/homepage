@@ -1,7 +1,10 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-module.exports = {
+
+import remarkGfm from "remark-gfm"
+
+const config = {
   siteMetadata: {
     title: `Anton Brall`,
     description: `Personal website for Anton Brall`,
@@ -60,6 +63,10 @@ module.exports = {
           },
         },
       ],
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [],
+      },
     },
   },
   {
@@ -121,3 +128,5 @@ module.exports = {
   },
 ]
 };
+
+export default config
