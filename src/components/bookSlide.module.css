@@ -19,6 +19,8 @@
     display: flex;
     gap: 30px;
     align-items: flex-start;
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-color);
 }
 .image_container {
     flex: 0 0 300px;
@@ -29,6 +31,5 @@
 }
 .heading {
     font-size: 2rem;
-    color: var(--main-color);
     margin-top: 0;
 }
