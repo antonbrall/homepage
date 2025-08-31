@@ -1,9 +1,9 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
-import BookSlide from "../../components/bookSlide";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import BookSlide from "../components/BookSlide";
 
 const BlogPost = ({ data, children }) => {
   const components = {
